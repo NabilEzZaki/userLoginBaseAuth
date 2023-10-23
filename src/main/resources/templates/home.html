@@ -1,10 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c299d0;
+            margin: 10;
+            padding: 10;
+        }
+
+        .dashboard {
+            background-color: #5e057e;
+            color: #c299d0;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .dashboard h1 {
+            font-weight: bold;
+            text-align: center;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .user-name {
+            text-align: center;
+            font-weight: bold;
+            font-size: 50px;
+            margin: 20px 0;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
+<div class="dashboard">
+    <h1>Welcome to Your Dashboard</h1>
+    <div class="content">
+        <h2 th:text="${userdetail.fullname}" class="user-name">User</h2>
+    </div>
+</div>
+
+<span sec:authorize="isAuthenticated"><a th:href="@{/logout}">Logout</a> </span>
 
 </body>
 </html>
