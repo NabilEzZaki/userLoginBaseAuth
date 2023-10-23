@@ -21,6 +21,7 @@ public class User {
         this.password = password;
         this.fullname = fullname;
     }
+
     public Long getId() {
         return id;
     }
